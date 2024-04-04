@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var words = "This is";
+      var morewords = " a sentence";
+      var sentence = words + morewords;
+      document.write(sentence);
+      document.write("<br>");
+      var num1 = 5;
+      var num2 = 3;
+      var total = num1 + num2;
+      document.write(total);
+      document.write("<br>");
+      var alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      var length = alpha.length;
+      var result = alpha.substring(2, 10);
+      document.write(length);
+      document.write("<br>");
+      document.write(result);
+      document.write("<br>");
+      var a = new Array(7);
+      a[0] = "cat";
+      a[1] = "dog";
+      a[2] = "fish";
+      a[3] = 25;
+      a[4] = "lion";
+      document.write(a[2]);
+      document.write("<br>");
+      var b = ["bat", "rat", 26, false];
+      document.write(b[1]);
+      document.write("<br>");
+      function sayHello(who) {
+        document.write("Hello" + who);
+      }
+      sayHello("Bob");
+      document.write("<br>");
+      sayHello("Mary");
+      document.write("<br>");
+      var c = 12;
+      if (c > 10) {
+        alert(c);
+      }
+      document.write("<br>");
+      for (i = 0; i < 5; i++) {
+        document.write("This is iteretion" + i + "<br>");
+      }
+    </script>
+  </body>
+</html>
