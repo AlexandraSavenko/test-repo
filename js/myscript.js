@@ -53,3 +53,25 @@ function add(a, b, c) {
 add(15, 27, 10);
 add(10, 20, 30);
 add(5, 10, 15);
+
+let tryit = 5;
+console.log(tryit);
+
+let login = function (password) {
+  if (password === "test123") {
+    return "Successfully loged in";
+  } else {
+    return "Password incorrect, please try again";
+  }
+};
+let result = login("test12");
+console.log(result);
+
+let favNum = function (num) {};
+
+function multiply(x, y, z) {
+  const product = x * y * z;
+  return product;
+}
+const theResult = multiply(7, 3, 5);
+console.log(theResult);
