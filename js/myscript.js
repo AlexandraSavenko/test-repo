@@ -11,6 +11,12 @@ function changeColor() {
 }
 console.log(button, box, typeof button, typeof box);
 
+// function checkAge(age) {
+// if (checkAge <= 18) {
+//   console.log(You are an adult);
+// }
+// }
+
 test.innerHTML = "<u>Hello</u> World";
 console.log(test, typeof test);
 
