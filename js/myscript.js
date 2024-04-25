@@ -81,3 +81,10 @@ function multiply(x, y, z) {
 }
 const theResult = multiply(7, 3, 5);
 console.log(theResult);
+
+let a = 6;
+let b = false;
+let c = "12";
+let d = 1;
+let total = a + d + c + b;
+console.log(total);
