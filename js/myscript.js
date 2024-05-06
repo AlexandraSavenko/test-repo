@@ -511,11 +511,89 @@
 // console.log("Log after exiting function");
 // console.log(`Result of function execution ${result}`);
 // ================================================================================================
-function findNumber(start, end, divisor) {
-  for (let i = start; i <= end; i++) {
-    if (i % divisor === 0) {
-      return i;
-    }
-  }
-}
-console.log(findNumber(8, 17, 3));
+// function findNumber(start, end, divisor) {
+//   for (let i = start; i <= end; i++) {
+//     if (i % divisor === 0) {
+//       return i;
+//     }
+//   }
+// }
+// console.log(findNumber(8, 17, 3));
+// ===============================================================================================
+// function getOrderQuantity(order) {
+//   return order.length;
+// }
+// =========================================================================================
+// function getLastElementMeta(array) {
+//   const indArray = array.length - 1;
+//   const lastArray = array[indArray];
+//   return [indArray, lastArray];
+// }
+// console.log(getLastElementMeta(["apple", "peach", "pear", "banana"]));
+//  and if I didn't want to see the number of returned values from the array, I could do this
+// console.log(...getLastElementMeta(["apple", "peach", "pear", "banana"]));
+// but I could also use Object in return. Here's how
+// function getLastElementMeta(array) {
+//   const indArray = array.length - 1;
+//   const lastArray = array[indArray];
+//   return { lastIndex: indArray, lastElement: lastArray };
+// }
+// ==============================================================================================
+// function getExtremeElements(array) {
+//   const lnArray = array.length;
+//   const fstArray = array[0];
+//   return [fstArray, lnArray];
+// }
+// const boo = getExtremeElements([1, 2, 3, 4, 5]);
+// console.log(boo);
+// function getExtremeElements(array) {
+//   const lnArray = array.length - 1;
+//   const lastInArray = array[lnArray];
+//   console.log(lastInArray);
+//   const fstArray = array[0];
+//   return [fstArray, lastInArray];
+// }
+// console.log(getExtremeElements(["apple", "peach", "pear", "banana"]));
+// ============================================================================================
+// function calculateEngravingPrice(message, pricePerWord) {
+//   const messageArray = message.split(" ");
+//   console.log(messageArray);
+//   console.log(messageArray.length);
+//   return messageArray.length * pricePerWord;
+// }
+// console.log(calculateEngravingPrice("JavaScript is in my blood", 10));
+// ===============================================================================================
+// const fruits = ["apple", "plum", "pear", "orange", "banana"];
+
+// const firstTwoEls = fruits.slice(0, 2);
+// const nonExtremeEls = fruits.slice(1, 4);
+// const lastThreeEls = fruits.slice(-3);
+// console.log(nonExtremeEls);
+// ============================================================================================
+// function getSlice(array, value) {
+//   const valInd = array.indexOf(value);
+//   const newArray = array.slice(0, valInd + 1);
+//   return array.indexOf(value) ? newArray : array.slice();
+// }
+// Here the mistake was very simple: array.slice() without begining and end will return a full array instead of an empty one)
+
+// function getSlice(array, value) {
+//   const valInd = array.indexOf(value);
+//   console.log(valInd);
+//   const newArray = array.slice(0, valInd + 1);
+//   return valInd >= 0 ? newArray : [];
+// }
+
+// console.log(getSlice(["Mango", "Poly", "Ajax"], "Poly"));
+// console.log(getSlice(["Mango", "Poly", "Ajax"], "Ajax"));
+// console.log(getSlice(["Mango", "Poly", "Ajax"], "Mango"));
+// console.log(getSlice(["Mango", "Poly", "Ajax"], "Jacob"));
+// console.log(getSlice(["Mango", "Poly", "Ajax"], "Casey"));
+// ================================================================================================
+// function createArrayOfNumbers(min, max) {
+//   const newArray = [];
+//   for (let i = min; i <= max; i++) {
+//     newArray.push(`${i}`);
+//   }
+// }
+//  first I made a mistake and used commas instead of semicolons in the for condition and then I also forgot to write return from the function;
