@@ -597,3 +597,126 @@
 //   }
 // }
 //  first I made a mistake and used commas instead of semicolons in the for condition and then I also forgot to write return from the function;
+// =================================================================
+//function calculateTotalPrice(order) {
+//   let sum = 0;
+//   for (let i = 0; i < order.length; i++) {
+//     sum += order[i];
+//   }
+//   return sum;
+// }
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+// console.log(calculateTotalPrice([164, 48, 291]));
+// let myNum = [1, 2, 3, 40, 7];
+// let sum = 0;
+// console.log(myNum);
+// for (let i = 0; i < myNum.length; i++) {
+//   sum += myNum[i];
+// }
+// console.log(sum);
+//=====================================================================
+// create an array
+// const myNums = [1, 2, 3, 4, 7];
+
+// create a variable for the sum and initialize it
+// let sum = 0;
+
+// calculate sum using forEach() method
+// myNums.forEach((num) => {
+//   sum += num;
+//   console.log(num);
+// });
+
+// console.log(sum); // 15
+//=============================================================
+// function getEvenNumbers(start, end) {
+//   let evenNum = [];
+//   for (let i = start; i <= end; i++) {
+//     if (i % 2 === 0) {
+//       evenNum.push(i);
+//     }
+//   }
+//   return evenNum;
+// }
+// console.log(getEvenNumbers(8, 8));
+// console.log(getEvenNumbers(6, 12));
+// console.log(getEvenNumbers(7, 7));
+// =============================================
+// function getOddNumbers(start, end) {
+//   let oddNum = [];
+//   for (let i = start; i <= end; i += 1) {
+//     if (i % 2 !== 0) {
+//       oddNum.push(i);
+//     }
+//   }
+//   return oddNum;
+// }
+// console.log(getOddNumbers(10, 14));
+// ===========================================================
+// function getCommonElements(array1, array2) {
+//   let newArray = [];
+//   //   const minlength = Math.min(array1.length, array2.length);
+//   //   console.log(minlength);
+//   for (let i = 0; i <= array1.length; i++) {
+//     if (array2.includes(array1[i])) {
+//       newArray.push(array1[i]);
+//     }
+//   }
+//   return newArray;
+// }
+// console.log(getCommonElements([1, 2, 3], [2, 4]));
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19]));
+// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+// console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));
+// console.log(getCommonElements([1, 2, 3], [10, 20, 30]));
+// console.log();
+// function calculateTotalPrice(order) {
+//   let sum = 0;
+//   for (number of order) {
+//     sum += number;
+//   }
+//   return sum;
+// }
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
+// =========================================================================================
+// function createReversedArray() {
+//   const myArray = Array.from(arguments);
+//   return myArray.toReversed();
+// }
+//! It's supper cool method and it took me half an hour to figure it out!!!!!!!
+// function createReversedArray() {
+//   let myArray = [];
+//   for (let i = 0; i < arguments.length; i += 1) {
+//     myArray.push(arguments[i]);
+//   }
+//   return myArray.toReversed();
+// }
+// console.log(createReversedArray());
+// console.log(createReversedArray(164, 48, 291));
+// console.log(createReversedArray(12, 85, 37, 4));
+// console.log(createReversedArray(412, 371, 94, 63, 176));
+//===================================================================
+// function multiply() {
+//   let total = 1;
+
+//   for (const arg of arguments) {
+//     console.log(arg);
+//     total *= arg;
+//   }
+
+//   return total;
+// }
+
+// console.log(multiply(1, 2, 3)); //  6
+// console.log(multiply(1, 2, 3, 4)); //  24
+// console.log(multiply(1, 2, 3, 4, 5)); //  120
+// ======================================================================================
+function calculateTax(amount, taxRate = 0.2) {
+  return amount * taxRate;
+}
+console.log(calculateTax(100, 0.1));
+console.log(calculateTax(200, 0.1));
+console.log(calculateTax(100, 0.2));
+console.log(calculateTax(200, 0.2));
+console.log(calculateTax(100));
+console.log(calculateTax(200));
