@@ -711,12 +711,73 @@
 // console.log(multiply(1, 2, 3, 4)); //  24
 // console.log(multiply(1, 2, 3, 4, 5)); //  120
 // ======================================================================================
-function calculateTax(amount, taxRate = 0.2) {
-  return amount * taxRate;
-}
-console.log(calculateTax(100, 0.1));
-console.log(calculateTax(200, 0.1));
-console.log(calculateTax(100, 0.2));
-console.log(calculateTax(200, 0.2));
-console.log(calculateTax(100));
-console.log(calculateTax(200));
+// function calculateTax(amount, taxRate = 0.2) {
+//   return amount * taxRate;
+// }
+// console.log(calculateTax(100, 0.1));
+// console.log(calculateTax(200, 0.1));
+// console.log(calculateTax(100, 0.2));
+// console.log(calculateTax(200, 0.2));
+// console.log(calculateTax(100));
+// console.log(calculateTax(200));
+// ============================================================================================
+//! had some hard time with for...in loop, can't comprehend how the hole key-value thing works
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+
+// const keys = [];
+// const values = [];
+// for (const key in apartment) {
+//   keys.push(key);
+// }
+// for (const value in apartment) {
+//   values.push(apartment[value]);
+// }
+// console.log(keys, values);
+// ==============================================================================================
+// !for...in vs for...of loops in case an array for...in only gives you indexes of the values.
+// const numbers = [1, 3, 5, 7, 9];
+// for (let number of numbers) {
+//   console.log(numbers[4]);
+// }
+// for (let number in numbers) {
+//   console.log(numbers[2]);
+// }
+// ======================================================================================
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+// const values = [];
+// const keys = Object.keys(apartment);
+// console.log(keys);
+// for (let a of keys) {
+//   values.push(apartment[a]);
+// }
+// console.log(values);
+// ======================================================================================
+//! had to change the function
+// function countProps(object) {
+//   let propCount = 0;
+
+//   for (const key in object) {
+//     if (object.hasOwnProperty(key)) {
+//       propCount += 1;
+//     }
+//   }
+
+//   return propCount;
+// }
+// function countProps(object) {
+//   const objectArray = Object.keys(object);
+//   console.log(objectArray);
+//   return objectArray.length;
+// }
+// console.log(countProps({}));
+// console.log(countProps({ name: "Mango", age: 2 }));
+// console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }));
+// console.log();
