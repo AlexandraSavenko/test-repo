@@ -917,23 +917,23 @@
 // console.log(calculateTotalPrice("Scanner"));
 //=================================================================================
 //! without .hasOwnProperty()=====================================================
-function getAllPropValues(propName) {
-  const products = [
-    { name: "Radar", price: 1300, quantity: 4 },
-    { name: "Scanner", price: 2700, quantity: 3 },
-    { name: "Droid", price: 400, quantity: 7 },
-    { name: "Grip", price: 1200, quantity: 9 },
-  ];
-  const newArray = [];
-  for (const x of products) {
-    if (x[propName]) {
-      newArray.push(x[propName]);
-    }
-  }
-  return newArray;
-}
-console.log(getAllPropValues("price"));
-console.log(getAllPropValues("name"));
+// function getAllPropValues(propName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+//   const newArray = [];
+//   for (const x of products) {
+//     if (x[propName]) {
+//       newArray.push(x[propName]);
+//     }
+//   }
+//   return newArray;
+// }
+// console.log(getAllPropValues("price"));
+// console.log(getAllPropValues("name"));
 // =================================================================================
 // const atTheOldToad = {
 //   potions: [
@@ -977,3 +977,91 @@ console.log(getAllPropValues("name"));
 //   return object;
 // }
 // console.log(getExtremeScores([89, 64, 42, 17, 93, 51, 26]));
+//=======================================================================
+// const users = ['Artem', 'Anna', 'Larisa', 'Maksim', 'Svetlana', 'David', 'Roman', 'Olga'];
+// const men = ['Artem', 'Maksim', 'David', 'Roman'];
+// function getWomen(users, men) {
+//   const girls = [];
+//   for (const user of users) {
+//     if (!men.includes(user)) {
+//       girls.push(user)
+//     }
+//     }
+//   }
+
+// console.log(getWomen(users, men))
+//==============================================================================
+// const numbers = [1, 2, 3, 1, 5, 6, 1, 1, 9];
+// for (i = 1; i < numbers.length; i++) {
+//   const currentEl = numbers[i];
+//   const previousEl = numbers[i - 1];
+//   if (currentEl <= previousEl) {
+//     numbers[i] = previousEl + 1;
+//   }
+// }
+// console.log(numbers);
+//=================================================================================
+// function deliverPizza(pizzaName) {
+//   return `Delivering ${pizzaName} pizza.`;
+// }
+
+// function makePizza(pizzaName) {
+//   return `Pizza ${pizzaName} is being prepared, please wait...`;
+// }
+
+// function makeMessage(pizzaName, callback) {
+//   return callback(pizzaName);
+// }
+// console.log(makeMessage("Royal Grand", makePizza)); //"Pizza Royal Grand is being prepared, please wait..."
+// console.log(makeMessage("Ultracheese", deliverPizza)); //"Delivering Ultracheese pizza.";
+//================================================================================
+// function makePizza(pizzaName, callback) {
+//   console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+//   callback(pizzaName);
+// }
+
+// makePizza("Royal Grand", function deliverPizza(pizzaName) {
+//   console.log(`Delivering pizza ${pizzaName}`);
+// });
+
+// makePizza("Ultracheese", function eatPizza(pizzaName) {
+//   console.log(`Eating pizza ${pizzaName}`);
+// });
+// ===================================================
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+
+//   orderedItems.forEach(function price(item) {
+//     totalPrice += item;
+//   });
+
+//   return totalPrice;
+// }
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+// console.log(calculateTotalPrice([164, 48, 291]));
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
+//==============================================================
+// function filterArray(numbers, value) {
+//   const newArray = [];
+//   numbers.forEach(function number(item) {
+//     if (item > value) {
+//       newArray.push(item);
+//     }
+//   });
+//   return newArray;
+// }
+// console.log(filterArray([1, 2, 3, 4, 5], 3));
+// console.log(filterArray([1, 2, 3, 4, 5], 4));
+// console.log(filterArray([1, 2, 3, 4, 5], 5));
+// console.log(filterArray([12, 24, 8, 41, 76], 38));
+// console.log(filterArray([12, 24, 8, 41, 76], 20));
+//============================================================
+const calculateTotalPrice = (orderedItems) => {
+  let totalPrice = 0;
+  console.log(orderedItems);
+  orderedItems.forEach((item) => {
+    totalPrice += item;
+  });
+  return totalPrice;
+};
+console.log(calculateTotalPrice([12, 85, 37, 4]));
