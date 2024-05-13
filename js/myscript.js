@@ -760,7 +760,7 @@
 // }
 // console.log(values);
 // ======================================================================================
-//! had to change the function
+//! the task was to change (refacture) the function
 // function countProps(object) {
 //   let propCount = 0;
 
@@ -781,3 +781,199 @@
 // console.log(countProps({ name: "Mango", age: 2 }));
 // console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }));
 // console.log();
+//============================================================================================
+// function countTotalSalary(salaries) {
+//   let totalSalary = 0;
+//   const arraySalaries = Object.values(salaries);
+//   console.log(arraySalaries);
+//   for (const x of arraySalaries) {
+//     totalSalary += x;
+//   }
+//   return totalSalary;
+// }
+// console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
+// console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));
+// =======================================================================
+// const colors = [
+//   { hex: "#f44336", rgb: "244,67,54" },
+//   { hex: "#2196f3", rgb: "33,150,243" },
+//   { hex: "#4caf50", rgb: "76,175,80" },
+//   { hex: "#ffeb3b", rgb: "255,235,59" },
+// ];
+// const hexColors = [];
+// const rgbColors = [];
+// for (const color of colors) {
+//   console.log(color);
+//   hexColors.push(color.hex);
+//   rgbColors.push(color.rgb);
+// }
+
+// console.log(hexColors);
+// console.log(rgbColors);
+// =====================================================================================
+// function getProductPrice(productName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+//   for (const item of products) {
+//     // console.log(item.price);
+//     if (item.name === productName) {
+//       return item.price;
+//     }
+//   }
+// }
+// console.log(getProductPrice("Radar"));
+//==================================================================================
+// function getAllPropValues(propName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+//   const newArray = [];
+//   for (const x of products) {
+//     console.log(x);
+//     if (x.hasOwnProperty(propName)) {
+//       newArray.push(x[propName]);
+//     }
+//   }
+//   return newArray;
+// }
+// console.log(getAllPropValues("category"));
+// console.log(getAllPropValues("name"));
+// =====================================================================================
+// function calculateTotalPrice(productName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+//   for (const product of products) {
+//     console.log(product);
+//   }
+// }
+// // console.log(calculateTotalPrice("Blaster"));
+// console.log(calculateTotalPrice("Radar"));
+// console.log(calculateTotalPrice("Droid"));
+// console.log(calculateTotalPrice("Grip"));
+// console.log(calculateTotalPrice("Scanner"));
+//======================================================================
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+// const values = [];
+// // const keys = Object.keys(apartment);
+// // console.log(keys);
+// for (let a in apartment) {
+//   values.push(apartment[a]);
+// }
+// console.log(values);
+//===========================================================================
+// // function getAllPropValues(propName) {
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+// const newArray = [];
+// for (const x of products) {
+//   if (x.price) {
+//     newArray.push(x["price"]);
+//     console.log(newArray);
+//   }
+// }
+// // return newArray;
+
+// // }
+//========================================================================
+// function calculateTotalPrice(productName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+//   let totalPrice = `Product ${productName} not found`;
+//   for (const item of products) {
+//     if (item.name === productName) {
+//       totalPrice = item.price * item.quantity;
+//       break;
+//     }
+//   }
+//   return totalPrice;
+// }
+// console.log(calculateTotalPrice("Blaster")); //"Product Blaster not found!"
+// console.log(calculateTotalPrice("Radar")); //5200
+// console.log(calculateTotalPrice("Droid"));
+// console.log(calculateTotalPrice("Grip"));
+// console.log(calculateTotalPrice("Scanner"));
+//=================================================================================
+//! without .hasOwnProperty()=====================================================
+function getAllPropValues(propName) {
+  const products = [
+    { name: "Radar", price: 1300, quantity: 4 },
+    { name: "Scanner", price: 2700, quantity: 3 },
+    { name: "Droid", price: 400, quantity: 7 },
+    { name: "Grip", price: 1200, quantity: 9 },
+  ];
+  const newArray = [];
+  for (const x of products) {
+    if (x[propName]) {
+      newArray.push(x[propName]);
+    }
+  }
+  return newArray;
+}
+console.log(getAllPropValues("price"));
+console.log(getAllPropValues("name"));
+// =================================================================================
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+//   getPotions() {
+//     return this.potions;
+//   },
+//   updatePotionName(oldName, newName) {
+//     for (const item of this.potions) {
+//       if (item.name === oldName) {
+//         item.name = newName;
+//       }
+//     }
+//   },
+// };
+// atTheOldToad.updatePotionName("Stone skin", "Invisibility");
+// console.log(atTheOldToad.potions);
+// console.log(atTheOldToad.getPotions());
+//==============================================================
+//!the .push() method returns the length of the array and not its values!!!
+// let arr = [];
+
+// console.log(fillArray(2, 10));
+
+// function fillArray(min, max) {
+//   for (let i = min; i <= max; i += 2) {
+//     return arr.push(i);
+//   }
+// }
+//===============================================================================
+// function getExtremeScores(scores) {
+//   const object = {};
+//   const biggest = Math.max(...scores);
+//   console.log(biggest);
+//   const smallest = Math.min(...scores);
+//   console.log(smallest);
+//   object.best = biggest;
+//   object.worst = smallest;
+//   return object;
+// }
+// console.log(getExtremeScores([89, 64, 42, 17, 93, 51, 26]));
