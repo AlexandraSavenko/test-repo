@@ -1130,88 +1130,350 @@
 // const titles = books.map((book) => book.title);
 // console.log(titles);
 //====================================================================
-const users = [
+// const users = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ["ipsum", "lorem"],
+//     gender: "male",
+//     age: 37,
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+//     gender: "female",
+//     age: 34,
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+//     gender: "male",
+//     age: 24,
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ["adipisicing", "irure", "velit"],
+//     gender: "female",
+//     age: 21,
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ["ex", "culpa", "nostrud"],
+//     gender: "male",
+//     age: 27,
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ["non", "amet", "ipsum"],
+//     gender: "male",
+//     age: 38,
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ["lorem", "veniam", "culpa"],
+//     gender: "female",
+//     age: 39,
+//   },
+// ];
+//=======================================================================
+// const calculateTotalBalance = (users) => {
+//   return users.reduce((total, user) => {
+//     return total + user.balance;
+//   }, 0);
+// };
+// console.log(calculateTotalBalance(users));
+//=========================================================================
+// const isEveryUserActive = (users) => {
+//   return users.every((eachUser) => eachUser.isActive === true);
+// };
+// console.log(isEveryUserActive(users));
+// let user = users.find((user) => user.eyeColor === "brown");
+// console.log(user);
+// const getUserEmails = (users) => {
+//   const eachUser = users.map((user) => user.email);
+//   return eachUser;
+// };
+// console.log(getUserEmails(users));
+//=============================================================
+// let cars = [
+//   {
+//     color: "purple",
+//     type: "minivan",
+//     registration: new Date("2017-01-03"),
+//     capacity: 7,
+//   },
+//   {
+//     color: "red",
+//     type: "station wagon",
+//     registration: new Date("2018-03-03"),
+//     capacity: 5,
+//   },
+//   {
+//     color: "purple",
+//     type: "minivan",
+//     registration: new Date("2017-01-03"),
+//     capacity: 7,
+//   },
+//   {
+//     color: "red",
+//     type: "station wagon",
+//     registration: new Date("2018-03-03"),
+//     capacity: 5,
+//   },
+//   {
+//     color: "purple",
+//     type: "minivan",
+//     registration: new Date("2017-01-03"),
+//     capacity: 7,
+//   },
+//   {
+//     color: "red",
+//     type: "station wagon",
+//     registration: new Date("2018-03-03"),
+//     capacity: 5,
+//   },
+//   {
+//     color: "purple",
+//     type: "minivan",
+//     registration: new Date("2017-01-03"),
+//     capacity: 7,
+//   },
+//   {
+//     color: "red",
+//     type: "station wagon",
+//     registration: new Date("2018-03-03"),
+//     capacity: 5,
+//   },
+// ];
+
+// let car = cars.find((car) => car.color === "red");
+
+// console.log(car);
+//===================================================================
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+
+// const evenNumbers = numbers.filter((evenNumber) => evenNumber % 2 === 0);
+// const oddNumbers = numbers.filter((oddNumber) => oddNumber % 2 !== 0);
+// console.log(evenNumbers);
+// console.log(oddNumbers);
+//===========================================================================
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+
+// const MIN_RATING = 8;
+// const AUTHOR = "Bernard Cornwell";
+// console.log(AUTHOR);
+
+// const topRatedBooks = books.filter((book) => book.rating >= MIN_RATING);
+// const booksByAuthor = books.filter(
+//   (book) => book.author.toLowerCase() === AUTHOR.toLocaleLowerCase()
+// );
+// console.log(topRatedBooks);
+// console.log(booksByAuthor);
+//! for the array above. I totally forgot to use return first and couldn't get anything out of the function
+// const getUsersWithEyeColor = (users, color) => {
+//   return users.filter((user) => user.eyeColor === color);
+// };
+// console.log(getUsersWithEyeColor(users, "blue"));
+//===========================================================================
+// const getUsersWithAge = (users, minAge, maxAge) => {
+//   return users.filter((user) => user.age >= minAge && user.age <= maxAge);
+// };
+// console.log(getUsersWithAge(users, 20, 30));
+//=============================================================================
+// console.log([1, 2, 3, 4, 5, 6, 7, 8, 9].every((x) => x !== 10));
+//==============================================================REDUCE==========================
+// const myArray = [2, 2, 3].reduce((previousValue, number) => {
+//   return previousValue + number;
+// }, 20);
+// console.log(myArray);
+//============================================================================
+// const players = {
+//   mango: 1270,
+//   poly: 468,
+//   ajax: 710,
+//   kiwi: 244,
+// };
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
+
+// const totalPlayTime = playtimes.reduce((x, y) => {
+//   return x + y;
+// }, 0);
+// console.log(totalPlayTime);
+// const averagePlayTime = totalPlayTime / playtimes.length;
+// console.log(averagePlayTime);
+//==========================================================================================
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+//   { name: "Houston", score: 64 },
+// ];
+
+// // Назва акумулятора може бути довільною, це просто параметр функції
+// const totalScore = students.reduce((total, student) => {
+//   return total + student.score;
+// }, 0);
+
+// const averageScore = totalScore / students.length;
+// console.log(totalScore);
+//?========================the main problem was I haven't read the task=============================================================
+// const players = [
+//   { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//   { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//   { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//   { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// ];
+
+// const totalTime = players.reduce((acc, y) => {
+//   return acc + y.playtime;
+// }, 0);
+// const totalAveragePlaytimePerGame = totalTime / players.length;
+//===============================================================================================
+// const totalAveragePlaytimePerGame = players.reduce((acc = 0, y) => {
+//   return acc + y.playtime / y.gamesPlayed;
+// }, 0);
+// console.log(totalAveragePlaytimePerGame);
+//===============================================================================================
+// const scores = [61, 19, 74, 35, 92, 56];
+// const ascendingScores = scores.toSorted((a, b) => a - b);
+// console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+//================================================================================================
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     rating: 7.94,
+//   },
+//   {
+//     title: "Enemy of God",
+//     author: "Bernard Cornwell",
+//     rating: 8.67,
+//   },
+// ];
+
+// const sortedByAuthorName = books.toSorted((a, b) =>
+//   a.author.localeCompare(b.author)
+// );
+// console.log(sortedByAuthorName);
+// const sortedByReversedAuthorName = books.toSorted((a, b) =>
+//   b.author.localeCompare(a.author)
+// );
+// console.log(sortedByReversedAuthorName);
+// const sortedByAscendingRating = books.toSorted((a, b) => a.rating - b.rating);
+// console.log(sortedByAscendingRating);
+// const sortedByDescentingRating = books.toSorted((a, b) => b - a);
+// console.log(sortedByDescentingRating);
+//========================================================================
+// const students = [
+//   { name: "Mango", score: 83, courses: ["mathematics", "physics"] },
+//   { name: "Poly", score: 59, courses: ["science", "mathematics"] },
+//   { name: "Ajax", score: 37, courses: ["physics", "biology"] },
+//   { name: "Kiwi", score: 94, courses: ["literature", "science"] },
+// ];
+// // const names = students
+// //   .toSorted((a, b) => a.score - b.score)
+// //   .map((student) => student.name);
+// // console.log(names);
+// const unicSortedCourses = students
+//   .flatMap((student) => student.courses)
+//   .filter((course, index, array) => array.indexOf(course) === index)
+//   .toSorted((a, b) => a.localeCompare(b));
+// console.log(unicSortedCourses);
+const books = [
   {
-    name: "Moore Hensley",
-    email: "moorehensley@indexia.com",
-    eyeColor: "blue",
-    friends: ["Sharron Pace"],
-    isActive: false,
-    balance: 2811,
-    skills: ["ipsum", "lorem"],
-    gender: "male",
-    age: 37,
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
   },
   {
-    name: "Sharlene Bush",
-    email: "sharlenebush@tubesys.com",
-    eyeColor: "blue",
-    friends: ["Briana Decker", "Sharron Pace"],
-    isActive: true,
-    balance: 3821,
-    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
-    gender: "female",
-    age: 34,
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
   },
   {
-    name: "Ross Vazquez",
-    email: "rossvazquez@xinware.com",
-    eyeColor: "green",
-    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-    isActive: false,
-    balance: 3793,
-    skills: ["nulla", "anim", "proident", "ipsum", "elit"],
-    gender: "male",
-    age: 24,
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
   },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
   {
-    name: "Elma Head",
-    email: "elmahead@omatom.com",
-    eyeColor: "green",
-    friends: ["Goldie Gentry", "Aisha Tran"],
-    isActive: true,
-    balance: 2278,
-    skills: ["adipisicing", "irure", "velit"],
-    gender: "female",
-    age: 21,
-  },
-  {
-    name: "Carey Barr",
-    email: "careybarr@nurali.com",
-    eyeColor: "blue",
-    friends: ["Jordan Sampson", "Eddie Strong"],
-    isActive: true,
-    balance: 3951,
-    skills: ["ex", "culpa", "nostrud"],
-    gender: "male",
-    age: 27,
-  },
-  {
-    name: "Blackburn Dotson",
-    email: "blackburndotson@furnigeer.com",
-    eyeColor: "brown",
-    friends: ["Jacklyn Lucas", "Linda Chapman"],
-    isActive: false,
-    balance: 1498,
-    skills: ["non", "amet", "ipsum"],
-    gender: "male",
-    age: 38,
-  },
-  {
-    name: "Sheree Anthony",
-    email: "shereeanthony@kog.com",
-    eyeColor: "brown",
-    friends: ["Goldie Gentry", "Briana Decker"],
-    isActive: true,
-    balance: 2764,
-    skills: ["lorem", "veniam", "culpa"],
-    gender: "female",
-    age: 39,
+    title: "The Dreams in the Witch House",
+    author: "Howard Lovecraft",
+    rating: 8.67,
   },
 ];
+const MIN_BOOK_RATING = 8;
 
-const getUserEmails = (users) => {
-  const eachUser = users.map((user) => user.email);
-  return eachUser;
-};
-console.log(getUserEmails(users));
+const names = books
+  .filter((book) => book.rating > MIN_BOOK_RATING)
+  .map((book) => book.author)
+  .toSorted((a, b) => a.localeCompare(b));
+console.log(names);
