@@ -1477,4 +1477,9 @@
 //   .map((book) => book.author)
 //   .toSorted((a, b) => a.localeCompare(b));
 // console.log(names);
-
+//======================================================================
+let max = 50;
+let min = 23;
+for (i = max; i >= min; i += 1) {
+  console.log(i);
+}
