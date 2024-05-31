@@ -1,3 +1,17 @@
+//!
+// var test = document.getElementById("test");
+// var button = document.querySelector("button");
+// var box = document.getElementById("changeMe");
+
+// function changeColor() {
+//   if (box.style.background == "red") {
+//     box.style.background = "blue";
+//   } else {
+//     box.style.background = "red";
+//   }
+// }
+// console.log(button, box, typeof button, typeof box);
+//==========================================
 // const user = {
 //   username: "Victor",
 //   age: 32,
@@ -310,3 +324,73 @@
 // };
 // objA.objB.objC.wrapper();
 //!!!!!!
+
+// Необхідно створити клас BankAccount, який представляє банківський рахунок.
+// Клас повинен мати приватну властивість balance, яка представляє баланс рахунку.
+// Клас повинен також мати публічні методи deposit та withdraw,
+// які дозволяють здійснювати операції з депозитом та зняттям коштів з рахунку.
+//  При цьому balance повинна бути доступна лише в межах класу BankAccount
+// та його приватних методів.
+// class BankAccount {
+//   #balance;
+//   constructor(balance = 0) {
+//     this.#balance = balance;
+//   }
+
+//   deposit(newSum) {
+//     const total = (newSum += this.#balance);
+//     console.log(newSum);
+//     if (total <= newSum) {
+//       console.log("sorry");
+//     } else {
+//       console.log("yes");
+//     }
+//   }
+//   withdraw(amount) {
+//     const minus = (this.#balance -= amount);
+//     if (minus <= this.#balance) {
+//       return "done";
+//     }
+//   }
+//   #getBalance() {
+//     return this.#balance;
+//   }
+//   printBalance() {
+//     console.log(`Current balance: $${this.#getBalance()}`);
+//   }
+// }
+
+// const instance = new BankAccount(0);
+// instance.deposit(100);
+// instance.deposit(1200);
+// instance.withdraw(1000);
+// console.log(instance);
+// const product = {
+//   goods: "phone",
+//   price: 500,
+//   discount() {
+//     const final = this.discount * product.price;
+//     return final;
+//   },
+// };
+// const client = {
+//   name: "Alex",
+//   discount: 0.08,
+//   purchase() {
+//     console.log(product.discount);
+//     console.log(product.price);
+//     console.log(this.discount);
+//     return product.discount;
+//   },
+// };
+// const result = client.purchase();
+// console.log(result);
+const button = document.querySelector(".btn");
+
+const handleClick = (event) => {
+  console.log("event: ", event);
+  console.log("event type: ", event.type);
+  console.log("currentTarget: ", event.currentTarget);
+};
+
+button.addEventListener("click", handleClick);
