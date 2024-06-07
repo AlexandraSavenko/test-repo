@@ -90,7 +90,7 @@
 // }
 // console.log(makePizza("Margarita"));
 // console.log(makeMessage(4, 5, calculateTotalPrice));
-// console.log(makeMessage("Ultracheese", deliverPizza));
+// console.log(makeMessage("Ultracheese", 4, deliverPizza));
 //==============================================================================
 // Функція calculateTotalPrice(orderedItems) приймає один параметр
 // orderedItems - масив чисел, і розраховує загальну суму його елементів,
@@ -385,12 +385,61 @@
 // };
 // const result = client.purchase();
 // console.log(result);
-const button = document.querySelector(".btn");
+// const button = document.querySelector(".btn");
 
-const handleClick = (event) => {
-  console.log("event: ", event);
-  console.log("event type: ", event.type);
-  console.log("currentTarget: ", event.currentTarget);
-};
+// const handleClick = (event) => {
+//   console.log("event: ", event);
+//   console.log("event type: ", event.type);
+//   console.log("currentTarget: ", event.currentTarget);
+// };
 
-button.addEventListener("click", handleClick);
+// button.addEventListener("click", handleClick);
+
+/*Напишіть функцію checkBrackets(str) яка приймає рядок жс коду (someFn)
+  і перевіряє правильність закриття дужок () {} []
+  Якщо рядок містить коректний код функція повертає true.
+  В іншому випадку повертає false
+*/
+
+// function checkBrackets(str) {
+//   const newArr = str.split("");
+//   const stack = [];
+//   const checkArr = newArr.forEach((el) => {
+//     if (el === "(" || el === "{" || el === "[") {
+//       stack.push(el);
+//     } else if (el === ")" || el === "}" || el === "]") {
+//       stack.pop();
+//     }
+//   });
+//   return stack.length === 0;
+// }
+// console.log(checkBrackets(someFn));
+//==========================================================================================
+const someFn = `function foo() {
+  const arr = [1, 2, 3];
+  console.log(arr);
+}`;
+function checkBrackets(str) {
+  const stack = [];
+  const obj = {
+    "(": ")",
+    "{": "}",
+    "[": "]",
+  };
+  for (let i = 0; i < str.length; i++) {
+    const bracket = str[i];
+    if (bracket === "(" || bracket === "{" || bracket === "[") {
+      stack.push(bracket);
+    }
+    if (bracket === "}" || bracket === ")" || bracket === "]") {
+      const lastEl = stack.pop();
+      console.log(lastEl);
+      if (bracket !== obj[lastEl]) {
+        return false;
+      }
+    }
+  }
+  if (stack.length) return false;
+  return true;
+}
+checkBrackets(someFn);
