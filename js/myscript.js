@@ -1,445 +1,93 @@
-//!
-// var test = document.getElementById("test");
-// var button = document.querySelector("button");
-// var box = document.getElementById("changeMe");
+const products = [
+  {
+    id: 3,
+    img: "https://static.dnipro-m.ua/cache/products/1335/catalog_origin_325102.jpg",
+    name: "Шліфмашина",
+    price: 1299,
+    description:
+      "Кутова шліфувальна машина Dnipro-M GS-98 – модель, яка поєднує в собі оптимальне співвідношення потужності, ваги та мобільності. Конструкція шліфмашини сприяє зручній та надійній роботі, навіть однією рукою. Інструмент ідеально підходить для виконання різу на висоті та використання у важкодоступних місцях. Низький рівень шуму та вібрації, двопозиційне розташування додаткової рукоятки під кутом 100 градусів, мінімізує втому під час шліфування.",
+  },
+  {
+    id: 4,
+    img: "https://static.dnipro-m.ua/cache/products/8284/catalog_origin_322127.jpg",
+    name: "Пила",
+    price: 11049,
+    description:
+      "Мобільна акумуляторна ланцюгова пила DCS-200BC DUAL призначена для обрізання зайвих гілок, спилювання дерев та чагарника, заготівлі дров, покрою будматеріалів та демонтажних робіт. Її просто використовувати у будь-яких місцях: на висоті, на виїзних роботах, у лісі або саду. При цьому Вам не потрібно буде турбуватися про підключення до мережі.",
+  },
+  {
+    id: 5,
+    img: "https://static.dnipro-m.ua/cache/products/2024/catalog_origin_323413.jpg",
+    name: "Рівень",
+    price: 897,
+    description:
+      "Рівень серії ProVision виробництва DNIPRO-M має не тільки високу точність вимірювань і чудові захисні властивості, а й надає максимальний комфорт користувачеві в процесі експлуатації.",
+  },
+  {
+    id: 6,
+    img: "https://static.dnipro-m.ua/cache/products/6566/catalog_origin_316315.jpg",
+    name: "Тример",
+    price: 3699,
+    description:
+      "Тример електричний Dnipro-M 110 призначений для покосу густої трави, а також кущів з діаметром стовбура до 10 мм.",
+  },
+  {
+    id: 7,
+    img: "https://static.dnipro-m.ua/cache/products/6483/catalog_origin_325859.jpg",
+    name: "Мотокоса",
+    price: 11049,
+    description:
+      "Мотокоса Dnipro-M 43 призначена для покосу трави, чагарників, бур'янів, газонів, а також для заготівлі сіна в невеликих масштабах.    Використовується для польових робіт на садовій ділянці площею до 2000 м2.",
+  },
+  {
+    id: 8,
+    img: "https://static.dnipro-m.ua/cache/products/2745/catalog_origin_319770.jpg",
+    name: "Генератор",
+    price: 10890,
+    description:
+      "Бензиновий генератор GX-25 номінальною потужністю 2,5 кВт забезпечить автономність побутових приладів на дачі або у приватному будинку. Ви зможете одночасно підключити до нього освітлення, холодильник, зарядку телефону, ноутбук та водяний насос.",
+  },
+];
 
-// function changeColor() {
-//   if (box.style.background == "red") {
-//     box.style.background = "blue";
-//   } else {
-//     box.style.background = "red";
-//   }
-// }
-// console.log(button, box, typeof button, typeof box);
-//==========================================
-// const user = {
-//   username: "Victor",
-//   age: 32,
-//   showName() {
-//     this.username = "Alex";
-//     console.log(`User ${this.username} is ${this.age} years old`);
-//   },
-// };
+const list = document.querySelector(".js-list");
+const LS_KEY = "checkout";
 
-// user.showName();
-//?This is a method defined using shorthand syntax for functions inside an object. It's equivalent to writing showName: function() { ... }.
-//?The method logs the username property of the user object to the console. It uses the this keyword to refer to the user object.
+list.insertAdjacentHTML("afterbegin", createMarkup(products));
+list.addEventListener("click", handlerAddToBasket);
 
-// const pizzaPalace = {
-//   pizzas: ["Supercheese", "Smoked", "Four meats"],
-//   checkPizza(pizzaName) {
-//     // console.log(pizzaName);
-//     return this.pizzas.includes(pizzaName);
-//   },
-//   order(pizzaName) {
-//     const isPizzaAvailable = this.checkPizza(pizzaName);
-//     console.log(isPizzaAvailable);
-//     if (!isPizzaAvailable) {
-//       return `Sorry, there is no pizza named «${pizzaName}»`;
-//     }
-
-//     return `Order accepted, preparing «${pizzaName}» pizza`;
-//   },
-// };
-// // console.log(pizzaPalace.checkPizza("Smoked"));
-// console.log(pizzaPalace.order("Pizza"));
-//==========================================================
-// Функція makePizza повертає рядок з повідомленням клієнту.
-
-// Доповни код таким чином, щоб у змінній result був результат
-//виконання функції makePizza, а у змінній pointer було посилання на функцію makePizza.
-
-// function makePizza(x) {
-//   return "Your pizza is almost ready";
-// }
-// const x = "x";
-// const result = makePizza(x);
-// const pointer = makePizza;
-// console.log(result);
-// console.log(pointer);
-// Функція makeMessage приймає один параметр ім'я
-// піци, що доставляється, pizzaName та повертає рядок з повідомленням клієнту.
-
-// Доповни функцію makeMessage таким чином, щоб вона
-// очікувала другим параметром(параметр callback) колбек - функцію
-// і повертала результат її виклику.Функції deliverPizza або makePizza
-// будуть передаватися як колбек для makeMessage і очікувати аргументом
-// ім'я готової піци, що доставляється.
-// function deliverPizza(pizzaName) {
-//   return `your pizza ${pizzaName} is waiting for you`;
-// }
-// function makeMessage(pizzaName, callback) {
-//   return callback;
-// }
-// console.log(makeMessage("Pizza", deliverPizza("Margarita")));
-//==========================
-//?Why do we repeat "pizzaName" in both functions? we don't, we need any words of the same number to  store the same amount of memory and once the memory is reserved, were put the values in it. Like a hotel. New values move in if there' enough rooms
-// function deliverPizza(pizzaName) {
-//   return `Delivering ${pizzaName} pizza.`;
-// }
-
-// function makePizza(pizzaName) {
-//   return `Pizza ${pizzaName} is being prepared, please wait...`;
-// }
-// function calculateTotalPrice(x, y) {
-//   return x * y;
-// }
-
-// function makeMessage(pizzaName, pizzaPrice, callback) {
-//   return callback(pizzaName, pizzaPrice);
-// }
-// console.log(makePizza("Margarita"));
-// console.log(makeMessage(4, 5, calculateTotalPrice));
-// console.log(makeMessage("Ultracheese", 4, deliverPizza));
-//==============================================================================
-// Функція calculateTotalPrice(orderedItems) приймає один параметр
-// orderedItems - масив чисел, і розраховує загальну суму його елементів,
-//   яка зберігається у змінній totalPrice і повертається як результат роботи функції.
-
-// Доповни виклик метода forEach, передавши йому колбек - функцію,
-//   яка на кожній ітерації додає до totalPrice значення поточного
-//   елемента масива orderedItems.
-// function calculateTotalPrice(orderedItems) {
-//   let totalPrice = 0;
-//   orderedItems.forEach((element) => {
-//     totalPrice += element;
-//   });
-//   return totalPrice;
-// }
-// console.log(calculateTotalPrice([25, 25, 25, 25, 50, 100]));
-//====================================================================
-// Функція filterArray(numbers, value) приймає першим
-// параметром масив чисел numbers і повертає новий масив,
-//   в якому будуть тільки ті елементи оригінального масиву,
-//   які більші за значення другого параметра числа value.
-//     Якщо таких значень не буде знайдено, функція повертає
-//     порожній масив.
-
-// Виконай рефакторинг функції таким чином, щоб замість циклу
-// for, вона використовувала метод forEach.
-// function filterArray(numbers, value) {
-//   const newArr = numbers.filter((element) => element > value);
-//   return newArr;
-// }
-// console.log(filterArray([25, 45, 12, 16, 50, 100, 10], 1000));
-//=============================================================================
-// const calculateTotalNumber = (number) => {
-//   let totalSum = 0;
-//   for (let i = 1; i <= number; i += 1) {
-//     totalSum += i;
-//   }
-//   return totalSum;
-// };
-
-// console.log(calculateTotalNumber(0));
-// //
-//==========================================================================
-// const numbers = [5, 10, 15, 20, 25];
-// const foo = (number) => {
-//   for (const num of numbers) {
-//     console.log(`value ${num}`);
-//   }
-//   return number;
-// };
-// console.log(foo(100));
-// Стрілочна анонімна функція
-// numbers.forEach((number, index) => {
-//   console.log(`Index ${index}, value ${number}`);
-// });
-//============================================================
-// const Numbers = [5, 10, 15, 20, 25];
-// const logMessage = (Number, index) => {
-//   console.log(`Index ${index}, value ${Number}`);
-// };
-// Numbers.forEach(logMessage);
-// const numbers = [5, 10, 15, 20, 25];
-// const foo = (number) => {
-//   for (const num of numbers) { // Замість 'number' використовуйте 'num' для уникнення конфліктів
-//     console.log(`value ${num}`);
-//   }
-//   return number; // Повертає параметр 'number', який був переданий у функцію
-// };
-
-// console.log(foo(100)); // Приклад виклику функції з аргументом 100
-// function logResult(a, b, callback) {
-//   console.log(callback);
-//   const result = callback(a, b);
-//   console.log(`Result is ${result}`);
-// }
-// logResult(4, 5, add);
-
-// function add(a, b) {
-//   return a + b;
-// }
-// const books = [
-//   {
-//     title: "The Last Kingdom",
-//     author: "Bernard Cornwell",
-//     rating: 8.38,
-//   },
-//   {
-//     title: "Beside Still Waters",
-//     author: "Robert Sheckley",
-//     rating: 8.51,
-//   },
-//   {
-//     title: "The Dream of a Ridiculous Man",
-//     author: "Fyodor Dostoevsky",
-//     rating: 7.75,
-//   },
-//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
-//   {
-//     title: "The Dreams in the Witch House",
-//     author: "Howard Lovecraft",
-//     rating: 8.67,
-//   },
-// ];
-// const MIN_BOOK_RATING = 8;
-// function foo(array) {
-//   const newArr = [];
-//   for (let book of books) {
-//     if (book.rating >= MIN_BOOK_RATING) {
-//       newArr.push(book.author);
-//     }
-//   }
-//   console.log(newArr);
-// }
-// console.log(foo(books));
-// const names = books
-//   .filter((book) => book.rating >= MIN_BOOK_RATING)
-//   .map((book) => book.author)
-//   .toSorted((a, b) => a.localeCompare(b));
-
-// function hello() {
-//   console.log(this.name);
-// }
-// hello();
-// const objA = {
-//   name: "Alice",
-// };
-
-// hello.call(objA);
-
-// const objA = {
-//   name: "Alice",
-//   hello: () => {
-//     console.log(this.name); // ''
-//   },
-// };
-
-// const objB = {
-//   name: "Kate",
-//   hello() {
-//     objA.hello();
-//   },
-// };
-
-// objB.hello();
-
-// const hello = function () {
-//   console.log(this.name);
-// };
-
-// const objA = {
-//   name: "Alice",
-//   myName: function () {
-//     console.log(this.name);
-//   },
-// };
-
-// objA.myName();
-//!
-// const objA = {
-//   name: "Alice",
-//   myName: function () {
-//     console.log(this.name);
-//   },
-// };
-
-// const objB = {
-//   name: "Kate",
-//   hello: objA.myName,
-// };
-
-// objB.hello();
-//!
-// const objA = {
-//   name: "Alice",
-//   myName: function () {
-//     console.log(this.name);
-//   },
-// };
-
-// const objB = {
-//   name: "Kate",
-//   hello: objA.myName,
-// };
-
-// const fn = objB.hello;
-// fn();
-// console.log(fn);
-//When I add () to const fn = objB.hello, it works and shoes "Kate", but fn() gives Error because fn is not a function
-//==========================================================
-// const hello = () => {
-//   console.log(this.name);
-// };
-
-// const objA = {
-//   name: "Alice",
-//   myName: hello,
-// };
-
-// objA.myName();
-
-// const flower = {
-//   blooming: "rose",
-//   sun: function () {
-//     console.log(this.blooming);
-//   },
-// };
-// const tree = {
-//   leaves: "green",
-//   branch: flower.sun.bind(flower),
-//   total() {
-//     console.log(`This tree ${this.leaves} is ${flower.blooming}`);
-//   },
-// };
-// tree.branch();
-// tree.total();
-//!!!!!!!!
-// const objA = {
-//   name: "Alice",
-//   objB: {
-//     name: "Beth",
-//     objC: {
-//       name: "Cassy",
-//       wrapper() {
-//         const hello = () => {
-//           console.log(this);
-//         };
-//         hello();
-//       },
-//     },
-//   },
-// };
-// objA.objB.objC.wrapper();
-//!!!!!!
-
-// Необхідно створити клас BankAccount, який представляє банківський рахунок.
-// Клас повинен мати приватну властивість balance, яка представляє баланс рахунку.
-// Клас повинен також мати публічні методи deposit та withdraw,
-// які дозволяють здійснювати операції з депозитом та зняттям коштів з рахунку.
-//  При цьому balance повинна бути доступна лише в межах класу BankAccount
-// та його приватних методів.
-// class BankAccount {
-//   #balance;
-//   constructor(balance = 0) {
-//     this.#balance = balance;
-//   }
-
-//   deposit(newSum) {
-//     const total = (newSum += this.#balance);
-//     console.log(newSum);
-//     if (total <= newSum) {
-//       console.log("sorry");
-//     } else {
-//       console.log("yes");
-//     }
-//   }
-//   withdraw(amount) {
-//     const minus = (this.#balance -= amount);
-//     if (minus <= this.#balance) {
-//       return "done";
-//     }
-//   }
-//   #getBalance() {
-//     return this.#balance;
-//   }
-//   printBalance() {
-//     console.log(`Current balance: $${this.#getBalance()}`);
-//   }
-// }
-
-// const instance = new BankAccount(0);
-// instance.deposit(100);
-// instance.deposit(1200);
-// instance.withdraw(1000);
-// console.log(instance);
-// const product = {
-//   goods: "phone",
-//   price: 500,
-//   discount() {
-//     const final = this.discount * product.price;
-//     return final;
-//   },
-// };
-// const client = {
-//   name: "Alex",
-//   discount: 0.08,
-//   purchase() {
-//     console.log(product.discount);
-//     console.log(product.price);
-//     console.log(this.discount);
-//     return product.discount;
-//   },
-// };
-// const result = client.purchase();
-// console.log(result);
-// const button = document.querySelector(".btn");
-
-// const handleClick = (event) => {
-//   console.log("event: ", event);
-//   console.log("event type: ", event.type);
-//   console.log("currentTarget: ", event.currentTarget);
-// };
-
-// button.addEventListener("click", handleClick);
-
-/*Напишіть функцію checkBrackets(str) яка приймає рядок жс коду (someFn)
-  і перевіряє правильність закриття дужок () {} []
-  Якщо рядок містить коректний код функція повертає true.
-  В іншому випадку повертає false
-*/
-
-// function checkBrackets(str) {
-//   const newArr = str.split("");
-//   const stack = [];
-//   const checkArr = newArr.forEach((el) => {
-//     if (el === "(" || el === "{" || el === "[") {
-//       stack.push(el);
-//     } else if (el === ")" || el === "}" || el === "]") {
-//       stack.pop();
-//     }
-//   });
-//   return stack.length === 0;
-// }
-// console.log(checkBrackets(someFn));
-//==========================================================================================
-const someFn = `function foo() {
-  const arr = [1, 2, 3];
-  console.log(arr);
-}`;
-function checkBrackets(str) {
-  const stack = [];
-  const obj = {
-    "(": ")",
-    "{": "}",
-    "[": "]",
-  };
-  for (let i = 0; i < str.length; i++) {
-    const bracket = str[i];
-    if (bracket === "(" || bracket === "{" || bracket === "[") {
-      stack.push(bracket);
-    }
-    if (bracket === "}" || bracket === ")" || bracket === "]") {
-      const lastEl = stack.pop();
-      console.log(lastEl);
-      if (bracket !== obj[lastEl]) {
-        return false;
-      }
-    }
+function handlerAddToBasket(evt) {
+  if (!evt.target.classList.contains("js-add")) {
+    return;
   }
-  if (stack.length) return false;
-  return true;
+
+  const product = evt.target.closest(".js-product");
+  const productId = Number(product.dataset.productId);
+  const currentProduct = products.find(({ id }) => id === productId);
+  const basket = JSON.parse(localStorage.getItem(LS_KEY)) ?? [];
+  const idx = basket.findIndex(({ id }) => id === productId);
+  console.log(idx);
+  if (idx !== -1) {
+    basket[idx].qty += 1;
+  } else {
+    currentProduct.qty = 1;
+    basket.push(currentProduct);
+  }
+
+  localStorage.setItem(LS_KEY, JSON.stringify(basket));
 }
-checkBrackets(someFn);
+
+function createMarkup(arr) {
+  return arr
+    .map(
+      ({ id, img, name, price, description }) => `
+       <li class="product-card js-product" data-product-id="${id}">
+        <img src="${img}" alt="${name}" class="product-img" />
+        <h2 class="product-title">${name}</h2>
+        <p class="product-description">${description}</p>
+        <p class="product-price">${price} грн</p>
+        <button type="button" class="product-add-btn js-add">Add to basket</button>
+      </li>
+ `
+    )
+    .join("");
+}
