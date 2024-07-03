@@ -1,44 +1,87 @@
-class BankAccount {
-  #balance;
+// const fetchUserFromServer = (theUsername, onSuccess, onError) => {
+//   console.log(`fetching data from ${theUsername}`);
+//   setTimeout(() => {
+//     const isSuccess = true;
+//     if (isSuccess) {
+//       onSuccess("success value");
+//     } else {
+//       onError("error value");
+//     }
+//   });
+// };
+// fetchUserFromServer(
+//   "mango",
+//   (user) => console.log(user),
+//   (error) => console.log(error)
+// );
+// console.log("Hello world");
+//
+// const fetchUserFromServer = (theUsername) => {
+//   return new Promise((resolve, reject) => {
+//     console.log(`fetching data from ${theUsername}`);
+//     setTimeout(() => {
+//       const isSuccess = true;
+//       if (isSuccess) {
+//         resolve("success my value");
+//       } else {
+//         reject("error value");
+//       }
+//     }, 2000);
+//   });
+// };
+// fetchUserFromServer("Mango")
+//   .then((user) => console.log(user))
+//   .catch((error) => console.log(error));
 
-  constructor(balance) {
-    // balance за замовчуванням 0
-    this.#balance = balance;
-  }
+// console.dir(fetchUserFromServer("Mango"));
+// /**
+//  *? Використовуючи функцію if...else,
+//  *? напишіть код, який запитуватиме:
+//  *? "Яка офіційна назва JavaScript?"
+//  *? Якщо користувач вводить "ECMAScript",
+//  *? то показати через alert: "Вірно!"
+//  *? інакше відобразити:"Не знаєте? ECMAScript!"
+//  */
+// function foo() {
+//   const question = prompt("Яка офіційна назва JavaScript?").trim();
+//   switch (question) {
+//     case "ECMAScript":
+//       alert("Вірно!");
+//       break;
+//     case " ":
+//       alert("Не знаєте? ECMAScript!");
+//       break;
+//     case "":
+//       break;
+//   }
+//   // if (question === "ECMAScript") {
+//   //   alert("Вірно!");
+//   // } else {
+//   //   alert("Не знаєте? ECMAScript!");
+//   // }
+// }
+// console.log(foo());
+// const makeGreeting = (guestName) => {
+//   if (!guestName) {
+//     return Promise.reject("Guest name must not be empty");
+//   } else {
+//     return Promise.resolve(`hello ${guestName}`);
+//   }
+// };
 
-  deposit(amount) {
-    if (amount > 0) {
-      this.#balance += amount;
-      console.log(`Deposited: $${amount}`);
-    } else {
-      console.log("Deposit amount must be positive.");
-    }
-  }
-
-  withdraw(amount) {
-    if (amount > 0 && amount <= this.#balance) {
-      this.#balance -= amount;
-      console.log(`Withdrew: $${amount}`);
-    } else if (amount > this.#balance) {
-      console.log("Insufficient funds.");
-    } else {
-      console.log("Withdrawal amount must be positive.");
-    }
-  }
-
-  #getBalance() {
-    return this.#balance;
-  }
-
-  printBalance() {
-    console.log(`Current balance: $${this.#getBalance()}`);
-  }
-}
-
-// Приклад використання:
-const instance = new BankAccount(); // Початковий баланс 100
-instance.deposit(200); // Deposited: $100
-instance.deposit(1200); // Deposited: $1200
-instance.withdraw(1000); // Withdrew: $1000
-instance.printBalance(); // Current balance: $400
-console.log(instance); // Виведе інформацію про об'єкт, але не про баланс
+// console.log(
+//   makeGreeting(prompt("What's your name?"))
+//     .then((greeting) => console.log(greeting))
+//     .catch((error) => console.log("there is a mistake"))
+// );
+const makePromise = ({ value, delay, shouldResolve = true }) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldResolve) {
+        resolve(value);
+      } else {
+        reject(value);
+      }
+    }, delay);
+  });
+};
